@@ -3,6 +3,7 @@
 <head>
   <title>Employee List</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="/javascripts/delete_user.js"></script>
@@ -18,21 +19,23 @@
       <table>
         <thead>
           <tr>
-            <th>User Name</th>
-            <th>Position</th>
-            <th>Salary</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
           </tr>
         </thead>
         <tbody>
           <% for(var i=0; i<users.length;i++) { %>
             <tr>
               <td>
+                <%= i + 1 %>
+              </td>
+              <td>
                 <%= users[i].name%>
               </td>
               <td>
-                <%= users[i].position%>
+                <%= users[i].email%>
               </td>
               <td>
                 <%= users[i].salary%>

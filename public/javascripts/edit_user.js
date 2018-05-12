@@ -12,7 +12,7 @@ function updateUser() {
     name: $("input[name=name]")
       .val()
       .trim(),
-    address: $("textarea[name=address]")
+    email: $("input[name=email]")
       .val()
       .trim(),
     position: $("input[name=position]")
