@@ -3,8 +3,7 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema({
   name: String,
   email: String,
-  position: String,
-  salary: Number,
+  phone: Number,
   updated_at: { type: Date, default: Date.now }
 });
 
