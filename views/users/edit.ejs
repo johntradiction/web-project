@@ -11,38 +11,42 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">Contact Management</a>
-    </nav>    
-    <divrow class="row">
-      <div class="col-4"></div>
-      <div class="col-4">
-        <div class="card">
-          <div class="card-header">
-            Edit Contact
-          </div>
-          </br>
-          <form>
-            <div class="form-group px-5">
-              <label for="exampleInputName">Name:</label>
-              <input type="text" name= "name" value="<%= user.name %>" class="form-control" id="name" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group px-5">
-              <label for="exampleInputaddress">E-Mail:</label>
-              <input type="text" name= "email" value="<%= user.email %>" class="form-control" id="email" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group px-5">
-              <label for="exampleInputphone">Phone:</label>
-              <input type="text" name= "phone" value="<%= user.phone %>" class="form-control" id="phone" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group px-5">
-              <button id="updateButton" type="submit" class="btn btn-success mxy-5">Submit</button>
-            </div>
-          </form>      
+  <nav class="navbar navbar-light bg-primary">  
+    <form class="form-inline">
+      <h5 class="text-light ">Contact Management</h5>
+      <input type="button" class="btn btn-primary btn-outline-light" style="margin: 5px" value="Index" onclick="location.href = '../../users';">
+      <input type="button" class="btn btn-primary btn-outline-light" style="margin: 5px" value="New" onclick="location.href = '../../users/user';">
+    </form>
+  </nav>   
+  <divrow class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header">
+          Edit Contact
         </div>
-        <div class="col-4"></div>
+        </br>
+        <form>
+          <div class="form-group px-5">
+            <label for="exampleInputName">Name:</label>
+            <input type="text" name= "name" value="<%= user.name %>" class="form-control" id="name" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group px-5">
+            <label for="exampleInputaddress">E-Mail:</label>
+            <input type="text" name= "email" value="<%= user.email %>" class="form-control" id="email" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group px-5">
+            <label for="exampleInputphone">Phone:</label>
+            <input type="text" name= "phone" value="<%= user.phone %>" class="form-control" id="phone" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group px-5">
+            <button id="updateButton" type="submit" class="btn btn-success mxy-5">Submit</button>
+          </div>
+        </form>      
       </div>
-    </divrow>
-  </body>
+      <div class="col-4"></div>
+    </div>
+  </divrow>
+</body>
 
 </html>
