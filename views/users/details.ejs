@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Edit user</title>
+  <title>User Details</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -11,46 +11,33 @@
 </head>
 
 <body>
-  <div class="container">
-    <h3>
-      <a href="/users">User List</a>
-    </h3>
-    <h1>Edit User</h1>
-
-    <table>
-      <tbody>
-        <tr>
-          <td>Name</td>
-          <td>
-            <input type="text" name="name" value="<%= user.name %>" />
-          </td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td>
-            <input type="text" name="email" value="<%= user.email %>" />
-          </td>
-        </tr>
-        <tr>
-          <td>Position</td>
-          <td>
-            <input type="text" name="position" value="<%= user.position %>" />
-          </td>
-        </tr>
-        <tr>
-          <td>Salary</td>
-          <td>
-            <input type="number" name="salary" value="<%= user.salary %>" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <button id="updateButton">Update</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Contact Management</a>
+  </nav>
+  <divrow class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header">
+          Contact
+        </div>
+        <div class="card-text px-4">
+          <br>
+          Name: <%= user.name%>
+          <br><br>
+          Email: <%= user.email%>
+          <br><br>
+          Phone: <%= user.phone%>
+          <br><br>
+        </div>
+        <div class="card-footer">
+          <a href="/users/user/<%= user._id%>" class="btn btn-outline-warning" role="button" aria-disabled="true">Edit</a>
+          <button type="button" class="btn btn-outline-danger deleteButton" data-uid="<%= user._id%>">Delete</button>
+        </div>
+      </div>
+    <div class="col-4"></div>
+    </div>
+  </divrow>
 </body>
 
 </html>

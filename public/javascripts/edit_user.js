@@ -4,10 +4,6 @@ function updateUser() {
   const url = window.location.pathname;
   const userId = url.substring(url.lastIndexOf("/") + 1);
   console.log(userId);
-  const salaryVal = $("input[name=salary]")
-    .val()
-    .trim();
-  const salary = parseInt(salaryVal, 10);
   const user = {
     name: $("input[name=name]")
       .val()
@@ -15,10 +11,9 @@ function updateUser() {
     email: $("input[name=email]")
       .val()
       .trim(),
-    position: $("input[name=position]")
+    phone: $("input[name=phone]")
       .val()
-      .trim(),
-    salary
+      .trim()
   };
 
   const request = $.ajax({

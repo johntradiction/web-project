@@ -13,6 +13,16 @@ userController.list = function(req, res) {
   });
 };
 
+userController.detail = function (req, res) {
+  User.findOne({ _id: req.params.id }).exec(function (err, user) {
+    if (err) {
+      console.log("Error:", err);
+    } else {
+      res.render("users/details", { user });
+    }
+  });
+};
+
 userController.edit = function(req, res) {
   const userId = req.params.id;
 
@@ -51,9 +61,8 @@ userController.update = function(req, res) {
     {
       $set: {
         name: updatedUser.name,
-        address: updatedUser.address,
-        position: updatedUser.position,
-        salary: updatedUser.salary
+        email: updatedUser.email,
+        phone: updatedUser.phone
       }
     },
     { new: true }, // return updated
