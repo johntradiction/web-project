@@ -10,53 +10,54 @@
 </head>
 
 <body>
-  <div class="container">
-    <h3>
-      <a href="/users/user">Create New User</a>
-    </h3>
-    <h1>User List</h1>
-    <% if(users.length>0) { %>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for(var i=0; i<users.length;i++) { %>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Contact Management</a>
+  </nav>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <h1>Contact List</h1>
+      <% if(users.length>0) { %>
+        <table class="table table-striped">
+          <thead>
             <tr>
-              <td>
-                <%= i + 1 %>
-              </td>
-              <td>
-                <%= users[i].name%>
-              </td>
-              <td>
-                <%= users[i].email%>
-              </td>
-              <td>
-                <%= users[i].phone%>
-              </td>
-              <td>
-                <a href="/users/user/<%= users[i]._id%>">
-                  Edit
-                </a>
-              </td>
-              <td>
-                <button class="deleteButton" data-uid="<%= users[i]._id%>">
-                  Delete
-                </button>
-              </td>
+              <th scope="col">#</th>
+              <th scope="col">User Name</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Options</th>
             </tr>
-            <% } %>
-        </tbody>
-      </table>
-      <% } else { %>
-        <div>No users found.</div>
-        <% } %>
+          </thead>
+          <tbody>
+            <% for(var i=0; i<users.length;i++) { %>
+              <tr>
+                <th scope="row"><%= i + 1 %></th>
+                <th scope="row">
+                  <%= users[i].name%>
+                </th>
+                <th scope="row">
+                  <%= users[i].email%>
+                </th>
+                <th scope="row">
+                  <%= users[i].phone%>
+                </th>
+                <td>
+                  <a href="/users/user/<%= users[i]._id%>" class="btn btn-outline-primary" role="button" aria-disabled="true">
+                    Details</a>
+                  <a href="/users/user/<%= users[i]._id%>" class="btn btn-outline-warning" role="button" aria-disabled="true">
+                    Edit</a>
+                  <button type="button" class="btn btn-outline-danger deleteButton" data-uid="<%= users[i]._id%>">
+                    Delete</button>
+                </td>
+              </tr>
+              <% } %>
+          </tbody>
+        </table>
+        <% } else { %>
+          <div>No users found.</div>
+          <% } %>
+    </div>
+    <div class="col-2"></div>
   </div>
 </body>
 
