@@ -14,7 +14,7 @@
 <body>
   <nav class="navbar navbar-light bg-primary">  
     <form class="form-inline">
-      <h5 class="text-light ">Contact Management</h5>
+      <h5 class="text-light" style="margin:10px">Contact Management</h5>
       <input type="button" class="btn btn-primary btn-outline-light" style="margin: 5px" value="Index" onclick="location.href = '../../users';">
       <input type="button" class="btn btn-primary btn-outline-light" style="margin: 5px" value="New" onclick="location.href = '../../users/user';">
     </form>
@@ -41,7 +41,7 @@
             <input type="text" name= "phone" class="form-control" id="phone" aria-describedby="emailHelp">
           </div>
           <div class="form-group px-5">
-            <button id="createButton" type="submit" class="btn btn-success mxy-5">Submit</button>
+            <a id="createButton" href="/users" role="button" class="btn btn-success">Submit</a>
           </div>
         </form>      
       </div>
@@ -50,15 +50,9 @@
   </divrow>
 </body>
 <script>
-function ValidateEmail(mail) 
-{
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.email.value))
-  {
-    return (true)
+  function delay (URL) {
+    setTimeout( function() { window.location = URL }, 1000 );
   }
-    alert("You have entered an invalid email address!")
-    return (false)
-}
 </script>
 
 </html>

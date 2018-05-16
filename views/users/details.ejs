@@ -13,7 +13,7 @@
 <body>
   <nav class="navbar navbar-light bg-primary">  
     <form class="form-inline">
-      <h5 class="text-light ">Contact Management</h5>
+      <h5 class="text-light" style="margin:10px">Contact Management</h5>
       <input type="button" class="btn btn-primary btn-outline-light" style="margin: 5px" value="Index" onclick="location.href = '../../users';">
       <input type="button" class="btn btn-primary btn-outline-light" style="margin: 5px" value="New" onclick="location.href = '../../users/user';">
     </form>
@@ -36,12 +36,10 @@
         </div>
         <div class="card-footer">
           <a href="/users/user/<%= user._id%>" class="btn btn-outline-warning" role="button" aria-disabled="true">Edit</a>
-          <button type="button" class="btn btn-outline-danger deleteButton" data-uid="<%= user._id%>">Delete</button>
         </div>
       </div>
     <div class="col-4"></div>
     </div>
   </divrow>
 </body>
-
 </html>
