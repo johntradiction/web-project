@@ -17,7 +17,6 @@ function deleteUser(uid) {
     type: "delete",
     success: function(data) {
       console.log("delete done", data);
-      window.location.reload();
     },
     error: function(jqXHR, textStatus, errorThrown) {
       console.log("error happend");

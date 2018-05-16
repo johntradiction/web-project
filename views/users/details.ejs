@@ -8,6 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="/javascripts/edit_user.js"></script>
+  <script type="text/javascript" src="/javascripts/delete_user.js"></script>
 </head>
 
 <body>
@@ -36,10 +37,30 @@
         </div>
         <div class="card-footer">
           <a href="/users/user/<%= user._id%>" class="btn btn-outline-warning" role="button" aria-disabled="true">Edit</a>
+          <a class="btn btn-outline-danger" data-uid="<%= user._id%>" onclick="clickHandler()">Delete</a>
         </div>
       </div>
     <div class="col-4"></div>
     </div>
   </divrow>
 </body>
+<script>
+
+function clickHandler() {
+
+  if (confirm("Are you sure?")) {
+    const uid = "<%= user._id%>";
+    console.log("delete: ", uid);
+    deleteUser(uid);
+    const requesthome = $.ajax({
+        url: '../users/',
+        type: 'get'
+      });
+
+      setTimeout('window.location.replace("../");', 1000);
+  } else {
+    txt = "You pressed Cancel!";
+  }
+}
+</script>
 </html>
