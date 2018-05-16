@@ -34,6 +34,11 @@ function createUser() {
     request.fail(function(jqXHR, textStatus, errorThrown) {
       console.log(jqXHR, textStatus, errorThrown);
     });
+    const requesthome = $.ajax({
+      url: '../users/',
+      type: 'get'
+    });
+    setTimeout('window.location.replace("../users");', 1000);
   } 
   else if (validEmail == true && strPhone.length == 10 && strPhone[0] !=0 && strPhone[0] !=1) {
     alert('You must enter a name.')
@@ -54,6 +59,6 @@ function createUser() {
     alert('You must enter a valid email. You must enter a 10 digit phone number not beginning with 1 or 0.')
   }
   else {
-    console.log('Multiple fields have been inputted incorrectly. Please try again.')
+    console.log('user created')
   }
 }
